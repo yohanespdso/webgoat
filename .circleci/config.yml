@@ -46,7 +46,9 @@ workflows:
     jobs:
       - build
       - test
+      - odc-backend:
+          requires:
+            - test
       - integration
-      - odc-backend
       - prod:
           type: approval
